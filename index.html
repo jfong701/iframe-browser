@@ -11,6 +11,8 @@
 <body style="text-align:left;" onload="runClock()">
 	<div id="headerBox">
 		<span id="bigHeader">Home Page</span>
+        <input type="text" oninput="fillLink()" id="addBar" style="opacity:0; width:148px;">
+        <span style="color: #FFFFFF; opacity:0; width:148px; overflow:hidden;" id="clicky" onclick="frameLoadNewSite()"></span>
 		<span id="clock"></span>
 	</div>
 	<div>
@@ -30,16 +32,6 @@
 		</div>
 		
 		<iframe src="https://wikipedia.org" id="viewerFrame"></iframe>
-	</div>
-	
-	<div style="position:fixed; bottom:0px; left:0px;">
-	
-		<input type="text" oninput="fillLink()" id="addBar" style="opacity:0; width:148px;">
-		
-		
-		<span style="color: #0000ff; opacity:0; width:148px; overflow:hidden;" id="clicky"
-		onclick="frameLoadNewSite()"></span>
-		
 	</div>
 	
 	<div style="position:fixed; bottom:0px; right:0px;">
