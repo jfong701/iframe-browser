@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Home</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="./iframe-browser.css">
+	<script src="./iframe-browser.js"></script>
+</head>
+
+<body style="text-align:left;" onload="runClock()">
+	<div id="headerBox">
+		<span id="bigHeader">Home Page</span>
+        <input type="text" oninput="fillLink()" id="addBar" style="opacity:0; width:148px;">
+        <span style="color: #FFFFFF; opacity:0; width:148px; overflow:hidden;" id="clicky" onclick="frameLoadNewSite()"></span>
+		<span id="clock"></span>
+	</div>
+	<div>
+		<div id="linkBox" style="position: absolute; width: 150px; z-index: 1;">
+		
+			<img src="../../images/rosi.png" class="linkIcon" alt="ROSI" id="rosi" onclick="decideBehaviourOfAddBar('https://rosi.utoronto.ca')"></img>
+			<img src="../../images/piazza.png" class="linkIcon" alt="Piazza" id="piazza"
+			onclick="decideBehaviourOfAddBar('https://piazza.com/')"></img>
+			<img src="../../images/wikipedia.png" class="linkIcon" alt="Wikipedia" id="wikipedia" onclick="decideBehaviourOfAddBar('https://www.wikipedia.org')"></img>
+			
+			<img src="../../images/google.png" class="linkIcon" alt="Google" id="google" onclick="decideBehaviourOfAddBar('https://www.google.ca')"></img>
+			<img src="../../images/google-maps.png" class="linkIcon" alt="Google Maps" id="google-maps"
+			onclick="decideBehaviourOfAddBar('https://www.google.ca/maps')"></img>
+			<img src="../../images/google-translate.png" class="linkIcon" alt="Google Translate" id="google-translate"
+			onclick="decideBehaviourOfAddBar('https://translate.google.ca')"></img>
+			
+		</div>
+		
+		<iframe src="https://wikipedia.org" id="viewerFrame"></iframe>
+	</div>
+	
+	<div style="position:fixed; bottom:0px; right:0px;">
+		<button id="themeToggle" onclick="darkMode()">Dark mode</button>
+		<button id="frameToggle" onclick="frameToggle()">toggle</button>
+		<button id="sidebarToggle" onclick="sidebarToggle()">collapse</button>
+	</div>
+</body>
+<script>
+	frameToggle();
+</script>
+</html>

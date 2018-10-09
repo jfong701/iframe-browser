@@ -1,0 +1,90 @@
+.linkIcon {
+	display: inline-block;
+	width: 65%;
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	vertical-align: middle;
+	cursor: pointer;
+	opacity: 0.25;
+	transition: 0.25s;
+}
+.linkIcon:hover {
+	opacity: 1;
+}
+.linkText {
+	position: relative;
+	top: 50%;
+	width: 100px;
+	height: 100px;
+	font-family: Segoe UI;
+	font-size: 28px;
+	color: #af0b1c;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.linkText:link {
+	text-decoration: none;
+}
+.linkText:visited {
+	text-decoration: none;
+}
+.linkText:hover {
+	text-decoration: none;
+}
+.linkText:active {
+	text-decoration: none;
+}
+#linkBox {
+	/*background-color: #e3e3e3;*/
+	
+	background-color: rgba(200, 200, 200, 0.5);
+	display: inline-block;
+	transition: 0.3s;
+}
+#headerBox {
+	background-color: #2196F3;
+	padding-left: 5px;
+	padding-bottom: 5px;
+}
+#bigHeader {
+	font-family: Segoe UI;
+	font-size: 24px;
+	color: #ffffff;
+	font-weight: 200;
+    margin-right: 20px;
+}
+#clock {
+	font-family: Consolas;
+	color: #ffffff;
+	font-weight: 200;
+	float: right;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+#sidebarToggle {
+	font-size: 16px;
+	float: right;
+	font-family: Segoe UI;
+	border: 1px solid #000;
+}
+#themeToggle {
+	font-size: 16px;
+	float: right;
+	font-family: Segoe UI;
+	border: 1px solid #000;
+}
+#frameToggle {
+	font-size: 16px;
+	float: right;
+	font-family: Segoe UI;
+	border: 1px solid #000;
+	border-right: none;
+}
+#viewerFrame {
+	width: 0px; height:0px; resize: both; opacity: 0; display: block; position: absolute; right: 8px; z-index: 0;
+}
