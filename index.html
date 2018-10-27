@@ -1,46 +1,57 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>New Home</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="iframe-browser.css">
+	<!--Bootstrap CDN + JS + JQuery-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous">
+	<script src="libraries/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	 crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="iframe-browser.css">
 	<script src="iframe-browser.js"></script>
 </head>
 
-<body style="text-align:left;" onload="runClock()">
-	<div id="headerBox">
-		<span id="bigHeader">Home Page</span>
-        <input type="text" oninput="fillLink()" id="addBar" style="opacity:0; width:148px;">
-        <span style="color: #FFFFFF; opacity:0; width:148px; overflow:hidden;" id="clicky" onclick="frameLoadNewSite()"></span>
-		<span id="clock"></span>
-	</div>
-	<div>
-		<div id="linkBox" style="position: absolute; width: 150px; z-index: 1;">
-		
-			<img src="images/rosi.png" class="linkIcon" alt="ROSI" id="rosi" onclick="decideBehaviourOfAddBar('https://rosi.utoronto.ca')"></img>
-			<img src="images/piazza.png" class="linkIcon" alt="Piazza" id="piazza"
-			onclick="decideBehaviourOfAddBar('https://piazza.com/')"></img>
-			<img src="images/wikipedia.png" class="linkIcon" alt="Wikipedia" id="wikipedia" onclick="decideBehaviourOfAddBar('https://www.wikipedia.org')"></img>
-			
-			<img src="images/google.png" class="linkIcon" alt="Google" id="google" onclick="decideBehaviourOfAddBar('https://www.google.ca')"></img>
-			<img src="images/google-maps.png" class="linkIcon" alt="Google Maps" id="google-maps"
-			onclick="decideBehaviourOfAddBar('https://www.google.ca/maps')"></img>
-			<img src="images/google-translate.png" class="linkIcon" alt="Google Translate" id="google-translate"
-			onclick="decideBehaviourOfAddBar('https://translate.google.ca')"></img>
-			
+<body>
+	<div class="container-fluid">
+		<div id="header" class="row align-items-center indigo-bg" style="padding-top: 5px; padding-bottom: 5px;">
+			<div class="col-md-2 large-text"><a id="title">iframe browser</a></div>
+			<div class="input-group mb-8 col-md-8 align-items-center">
+				<input type="text" id="AddressBar" class="indigo-2-bg address-link form-control" style="border-radius: 1em;">
+				<button id="AddressBarButton" class="input-group-append btn indigo-bg" style="padding-left: 0.5em;">
+					<i class="far fa-2x fa-arrow-alt-circle-right"></i>
+				</button>
+			</div>
+			<div class="col-md-1">
+
+			</div>
+			<div class="col-md-1" style="text-align: center;">
+				<span id="clock"></span>
+			</div>
 		</div>
-		
-		<iframe src="https://wikipedia.org" id="viewerFrame"></iframe>
-	</div>
-	
-	<div style="position:fixed; bottom:0px; right:0px;">
-		<button id="themeToggle" onclick="darkMode()">Dark mode</button>
-		<button id="frameToggle" onclick="frameToggle()">toggle</button>
-		<button id="sidebarToggle" onclick="sidebarToggle()">collapse</button>
+		<div id="iframe-border-area" class="row" style="background-color: #222f3e;">
+			<div id="iframe-box" class="iframe-box row">
+				<div class="col-md-1" style="background-color: red;">
+					
+				</div>
+				<div id="IframeColumn" class="col-md-11">
+					<iframe id="Iframe"></iframe>
+				</div>
+			</div>
+		</div>
+		<div id="footer" class="row footer">
+			<div>
+				Placeholder text
+			</div>
+		</div>
 	</div>
 </body>
-<script>
-	frameToggle();
-</script>
+
 </html>

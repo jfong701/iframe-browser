@@ -1,90 +1,53 @@
-.linkIcon {
-	display: inline-block;
-	width: 65%;
-	margin-left: 20%;
-	margin-right: 20%;
-	margin-top: 5%;
-	margin-bottom: 5%;
-	vertical-align: middle;
+#title {
 	cursor: pointer;
-	opacity: 0.25;
-	transition: 0.25s;
 }
-.linkIcon:hover {
-	opacity: 1;
+
+#IframeColumn {
+	background-color: #ffffff;
 }
-.linkText {
-	position: relative;
-	top: 50%;
-	width: 100px;
-	height: 100px;
-	font-family: Segoe UI;
-	font-size: 28px;
-	color: #af0b1c;
-	padding-left: 30px;
-	padding-right: 30px;
-	padding-top: 15px;
-	padding-bottom: 15px;
+
+.large-text {
+	font-size: 1.7em;
+	font-weight: lighter;
 }
-.linkText:link {
-	text-decoration: none;
-}
-.linkText:visited {
-	text-decoration: none;
-}
-.linkText:hover {
-	text-decoration: none;
-}
-.linkText:active {
-	text-decoration: none;
-}
-#linkBox {
-	/*background-color: #e3e3e3;*/
-	
-	background-color: rgba(200, 200, 200, 0.5);
-	display: inline-block;
-	transition: 0.3s;
-}
-#headerBox {
-	background-color: #2196F3;
-	padding-left: 5px;
-	padding-bottom: 5px;
-}
-#bigHeader {
-	font-family: Segoe UI;
-	font-size: 24px;
+
+.footer {
+	background-color: #576574;
 	color: #ffffff;
-	font-weight: 200;
-    margin-right: 20px;
 }
-#clock {
-	font-family: Consolas;
+
+.address-link {
+	word-wrap: break-word;
+	color: #dddddd;
+	padding: 0.33em 1em 0.33em 1em;
+}
+
+.address-link:focus {
+	color: #000000;
+}
+
+.iframe-box {
+	background-color: #10ac84;
+	margin: 10px;
+}
+
+/* Colours */
+.light-blue-bg {
+	background-color: #54a0ff;
 	color: #ffffff;
-	font-weight: 200;
-	float: right;
-	padding-right: 5px;
-	padding-top: 5px;
-	padding-bottom: 5px;
 }
-#sidebarToggle {
-	font-size: 16px;
-	float: right;
-	font-family: Segoe UI;
-	border: 1px solid #000;
+
+.blue-bg {
+	background-color: #2e86de;
+	color: #ffffff;
 }
-#themeToggle {
-	font-size: 16px;
-	float: right;
-	font-family: Segoe UI;
-	border: 1px solid #000;
+
+.indigo-bg {
+	background-color: #341f97;
+	color: #ffffff;
 }
-#frameToggle {
-	font-size: 16px;
-	float: right;
-	font-family: Segoe UI;
-	border: 1px solid #000;
-	border-right: none;
-}
-#viewerFrame {
-	width: 0px; height:0px; resize: both; opacity: 0; display: block; position: absolute; right: 8px; z-index: 0;
+
+.indigo-2-bg {
+	background-color: #25166d;
+	color: #ffffff;
 }

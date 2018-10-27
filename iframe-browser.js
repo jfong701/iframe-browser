@@ -1,3 +1,90 @@
+$(document).ready(function () {
+	setIframeLink("bing.ca");
+	runClock();
+	resetPage();
+	setIframeAreaSize();
+	setIframeLinkOnEnter();
+	setIframeLinkOnBtnClick();
+	// test();
+});
+
+function test() {
+
+}
+
+function chkFrame(fr) {
+    if (!fr.contentDocument.location) alert('Cross domain');
+  }
+
+function addressListener() {
+	$('#AddressBar').val();
+}
+
+function setIframeLinkOnBtnClick() {
+	$('#AddressBarButton').click(function () {
+		var address = $('#AddressBar').val();
+		if (address !== "") {
+			setIframeLink($('#AddressBar').val());
+		}
+	});
+}
+
+function setIframeLinkOnEnter() {
+	$('#AddressBar').keyup(function (e) {
+		if (e.keyCode === 13) {
+			var address = $('#AddressBar').val();
+			if (address !== "") {
+				setIframeLink($('#AddressBar').val());
+			}
+		}
+	});
+}
+
+$(window).resize(function () {
+	setIframeAreaSize();
+});
+
+// takes in a string, and sets the iframe link
+function setIframeLink(link) {
+	if (typeof (link) === 'string') {
+		link = formatLink(link);
+		$('#Iframe').attr('src', link);
+	}
+}
+
+function formatLink(link) {
+	if (typeof (link) === 'string') {
+		var newLink = null;
+		if (link.startsWith('https://') || link.startsWith('http://')) {
+			newLink = link;
+		} else {
+			newLink = 'http://' + link;
+		}
+		return newLink;
+	} else {
+		alert('type error formatting link')
+	}
+}
+
+function resetPage() {
+	$('#title').click(function () {
+		location.reload();
+	});
+};
+
+function setIframeAreaSize() {
+	console.log('resize called');
+	$('#iframe-border-area')
+		.height($(window).outerHeight() - $('#header').outerHeight() - $('#footer').outerHeight());
+	$('#iframe-box')
+		.height($('#iframe-border-area').height() - 20)
+		.width($('#iframe-border-area').width() - 20);
+	$('#Iframe')
+		.width($('#IframeColumn').innerWidth() - 30)
+		.height($('#iframe-box').innerHeight() - 5);
+}
+
+
 function darkMode() {
 	var body = document.getElementsByTagName('body')[0];
 	var toggleButton = document.getElementById('themeToggle');
@@ -7,8 +94,8 @@ function darkMode() {
 	var addBar = document.getElementById('addBar');
 	var clickLink = document.getElementById('clicky');
 	var headerBox = document.getElementById('headerBox');
-	
-	
+
+
 	/* dark mode */
 	if (toggleButton.innerHTML === "Dark mode") {
 		toggleButton.innerHTML = "Light mode";
@@ -49,7 +136,7 @@ function frameToggle() {
 	var clickLink = document.getElementById('clicky');
 	var addBar = document.getElementById('addBar');
 	var linkBox = document.getElementById('linkBox');
-	
+
 	/* visible --> invisible */
 	if (viewerFrame.style.opacity == 1) {
 		viewerFrame.style.opacity = 0;
@@ -63,10 +150,10 @@ function frameToggle() {
 		clickLink.style.opacity = 1;
 		addBar.style.opacity = 1;
 		changeLinksToFrameSafe(true);
-		
+
 		/* resize frame to window size - linkbox */
 		viewerFrame.style.width = (window.innerWidth - linkBox.style.width.slice(0, -2)) * .95 + "px";
-		
+
 		viewerFrame.style.height = (window.innerHeight - linkBox.style
 			.height.slice(0, -2)) * .80 + "px";
 	}
@@ -92,7 +179,7 @@ function changeLinksToFrameSafe(frameActive) {
 		googleTranslate.src = "images/google-translate.png";
 		googleTranslate.alt = "Google Translate";
 	}
-	
+
 }
 
 function fillLink() {
@@ -129,7 +216,7 @@ function decideBehaviourOfAddBar(url) { /** USED TO BE CALLED a() FUNCTION CHANG
 
 function swapURL(url, frameActive) {
 	/* (string, boolean) Change URL depending on if the frame is open or not */
-	var returnVal =  url;
+	var returnVal = url;
 	if (frameActive) {
 		switch (url) {
 			case "https://www.google.ca":
@@ -162,10 +249,10 @@ function runClock() {
 	var dateObj = new Date();
 	var h = dateObj.getHours();
 	var m = dateObj.getMinutes();
-	var s  = dateObj.getSeconds();
-	
+	var s = dateObj.getSeconds();
+
 	document.getElementById('clock').innerHTML = getFormattedTime(h,
-	m, s);
+		m, s);
 	var t = setTimeout(runClock, 100);
 }
 
@@ -190,13 +277,13 @@ function getFormattedTime(h, m, s) {
 function sidebarToggle() {
 	var btn = document.getElementById('sidebarToggle');
 	var linkBox = document.getElementById('linkBox');
-	
+
 	/* determine initial state, expand or collapse sidebar based on state */
-	
+
 	if (btn.innerHTML === "collapse") {
 		btn.innerHTML = "expand";
 		linkBox.style.width = "25px";
-		
+
 	} else if (btn.innerHTML === "expand") {
 		btn.innerHTML = "collapse";
 		linkBox.style.width = "150px";
