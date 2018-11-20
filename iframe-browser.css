@@ -3,7 +3,7 @@
 }
 
 #IframeColumn {
-	background-color: #ffffff;
+	
 }
 
 .large-text {
@@ -14,6 +14,10 @@
 .footer {
 	background-color: #576574;
 	color: #ffffff;
+	display: flex;
+	justify-content: space-around;
+	font-weight: 900;
+	font-family: monospace;
 }
 
 .address-link {
@@ -27,7 +31,6 @@
 }
 
 .iframe-box {
-	background-color: #10ac84;
 	margin: 10px;
 }
 
@@ -43,11 +46,37 @@
 }
 
 .indigo-bg {
-	background-color: #341f97;
+	/* background-color: #341f97; */
+	background-color: #25166d;
 	color: #ffffff;
 }
 
 .indigo-2-bg {
-	background-color: #25166d;
+	background-color: #341f97;
 	color: #ffffff;
+}
+
+.black-bg {
+	background-color: #000000;
+	color: #ffffff;
+}
+
+.sidebar {
+	justify-content: space-evenly;
+	text-align: center;
+}
+
+.sidebar-box {
+	display: inline-flex;
+	padding: 0.5em 0.5em 0.5em 0;
+}
+
+.dark-bg-link {
+	transition: 0.3s;
+	color: #ffffff;
+}
+
+.dark-bg-link:hover {
+	color: #54a0ff;
+	text-decoration: none;
 }

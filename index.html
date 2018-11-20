@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>New Home</title>
+	<title>iframe browser</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<!--Bootstrap CDN + JS + JQuery-->
@@ -13,7 +13,7 @@
 	 crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 	 crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
 	 crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="iframe-browser.css">
 	<script src="iframe-browser.js"></script>
@@ -36,10 +36,24 @@
 				<span id="clock"></span>
 			</div>
 		</div>
-		<div id="iframe-border-area" class="row" style="background-color: #222f3e;">
-			<div id="iframe-box" class="iframe-box row">
-				<div class="col-md-1" style="background-color: red;">
-					
+		<div id="iframe-border-area" class="row black-bg">
+			<div id="iframe-box" class="iframe-box black-bg row">
+				<div class="col-md-1 sidebar indigo-bg">
+					<div class="sidebar-box">
+						<a href="https://www.wikipedia.org/" class="fab fa-4x fa-wikipedia-w dark-bg-link"></a>
+					</div>
+					<div class="sidebar-box">
+						<a href="https://www.bing.com/?cc=ca" class="fas fa-4x fa-search dark-bg-link"></a>
+					</div>
+					<div class="sidebar-box">
+						<a href="http://maps.google.com" class="fas fa-4x fa-map-marked dark-bg-link"></a>
+					</div>
+					<div class="sidebar-box">
+						<a href="http://translate.google.ca" class="fas fa-4x fa-language dark-bg-link"></a>
+					</div>
+					<div class="sidebar-box">
+						<a href="http://rosi.utoronto.ca/" class="fas fa-4x fa-university dark-bg-link"></a>
+					</div>
 				</div>
 				<div id="IframeColumn" class="col-md-11">
 					<iframe id="Iframe"></iframe>
@@ -49,6 +63,12 @@
 		<div id="footer" class="row footer">
 			<div>
 				Placeholder text
+			</div>
+			<div>
+				Light mode
+			</div>
+			<div>
+				<a href="./pages/original/index.html" class="dark-bg-link">Original Page</a>
 			</div>
 		</div>
 	</div>
