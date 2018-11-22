@@ -5,26 +5,46 @@ $(document).ready(function () {
 	setIframeAreaSize();
 	setIframeLinkOnEnter();
 	setIframeLinkOnBtnClick();
+	setButtonLinkClicks();
 	// test();
 });
+
+iframeLinkObj = {
+	'wikipedia': 'https://www.wikipedia.org',
+	'search': 'https://www.bing.ca',
+	'maps': 'http://maps.google.com/?q=Canada&output=embed',
+	'translate': 'https://www.bing.com/translator',
+	'school': 'http://rosi.utoronto.ca'
+}
+
 
 function test() {
 
 }
 
+function setButtonLinkClicks() {
+	$('.link-icon').click(function (e) {
+		var target = $(e.target);
+		// use the id as the key to search in object with links
+		var selectedLink = iframeLinkObj[target.attr('id')];
+		if (typeof (selectedLink) === 'string' && selectedLink !== undefined) {
+			setIframeLink(selectedLink);
+		}
+	});
+}
+
 function chkFrame(fr) {
-    if (!fr.contentDocument.location) alert('Cross domain');
-  }
+	if (!fr.contentDocument.location) alert('Cross domain');
+}
 
 function addressListener() {
-	$('#AddressBar').val();
 }
 
 function setIframeLinkOnBtnClick() {
 	$('#AddressBarButton').click(function () {
 		var address = $('#AddressBar').val();
 		if (address !== "") {
-			setIframeLink($('#AddressBar').val());
+			searchOrSetIframe($('#AddressBar').val());
 		}
 	});
 }
@@ -34,11 +54,23 @@ function setIframeLinkOnEnter() {
 		if (e.keyCode === 13) {
 			var address = $('#AddressBar').val();
 			if (address !== "") {
-				setIframeLink($('#AddressBar').val());
+				searchOrSetIframe($('#AddressBar').val());
 			}
 		}
 	});
 }
+
+// if it looks like a link, set it directly in the iframe. Otherwise, set it as the iframe src
+function searchOrSetIframe(potentialLink) {
+	// quick regex for checking if something looks like a link or not.
+	var siteRegex = /'(http:\/\/|https:\/\/)*(www\.)*[a-zA-Z]+\.[a-zA-Z]+(\/)*'/gm
+	if (siteRegex.test(potentialLink)) {
+		setIframeLink(potentialLink);
+	} else {
+		setIframeLink('https://www.bing.com/search?q=' + potentialLink);
+	}
+}
+
 
 $(window).resize(function () {
 	setIframeAreaSize();
